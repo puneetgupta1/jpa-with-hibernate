@@ -16,7 +16,7 @@ public class CourseRepository {
     Logger log = LoggerFactory.getLogger(CourseRepository.class);
 
     @Autowired
-    private EntityManager entityManager;
+    private EntityManager entityManager; // Simple interface to the persistence context
 
     public Course findById(Long id) {
         return entityManager.find(Course.class, id);
@@ -55,6 +55,15 @@ public class CourseRepository {
         Course course2 = new Course("Microservices in 200 steps");
         entityManager.persist(course2);
         entityManager.flush();
+
+        //Create another course without name - this will throw exception because it is nullable=false
+        //Course course3 = new Course(null);
+        //entityManager.persist(course3);
+        //entityManager.flush();
+
+        //For testing the @UpdateTimestamp and @CreationTimestamp
+        Course course3 = findById(1001L);
+        course3.setName("Puneet Gupta");
 
         //What detach does is that it will stop updating course2 after a detach is called on it
         entityManager.detach(course2);

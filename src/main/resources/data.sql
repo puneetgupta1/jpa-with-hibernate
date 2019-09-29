@@ -1,5 +1,5 @@
-insert into course (ID, NAME) values(1001, 'Puneet');
-insert into course (ID, NAME) values(1002, 'Ria');
-insert into course (ID, NAME) values(1003, 'Risha');
-insert into course (ID, NAME) values(1004, 'Twi');
-insert into course (ID, NAME) values(1005, 'Bhavna');
+insert into course (ID, FULLNAME, created_date, last_updated_date) values(1001, 'Puneet', sysdate(), sysdate());
+insert into course (ID, FULLNAME, created_date, last_updated_date) values(1002, 'Ria', sysdate(), sysdate());
+insert into course (ID, FULLNAME, created_date, last_updated_date) values(1003, 'Risha', sysdate(), sysdate());
+insert into course (ID, FULLNAME, created_date, last_updated_date) values(1004, 'Twi', sysdate(), sysdate());
+insert into course (ID, FULLNAME, created_date, last_updated_date) values(1005, 'Bhavna', sysdate(), sysdate());
